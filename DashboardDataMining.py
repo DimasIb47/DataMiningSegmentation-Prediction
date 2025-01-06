@@ -5,6 +5,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 
+import os
+os.chdir(os.path.dirname(__file__))
+print("Current working directory:", os.getcwd())
+
 df = pd.read_excel('Retail-Supply-Chain-Sales-Dataset.xlsx')
 columns_to_drop = [
     "Order Date", "Ship Date", "Order ID",
