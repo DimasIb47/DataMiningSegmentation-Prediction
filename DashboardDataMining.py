@@ -3,9 +3,7 @@ import pandas as pd
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-os.chdir(os.path.dirname(__file__))
-print("Current working directory:", os.getcwd())
+from sklearn.preprocessing import LabelEncoder
 
 df = pd.read_excel('Retail-Supply-Chain-Sales-Dataset.xlsx')
 columns_to_drop = [
@@ -17,7 +15,7 @@ columns_to_drop = [
 df_cleaned = df.drop(columns=columns_to_drop)
 print(df_cleaned.head())
 
-from sklearn.preprocessing import LabelEncoder
+
 label_encoder = LabelEncoder()
 df_cleaned['Sub-Category (Numeric)'] = label_encoder.fit_transform(df_cleaned['Sub-Category'])
 df_cleaned['State (Numeric)'] = label_encoder.fit_transform(df_cleaned['State'])
