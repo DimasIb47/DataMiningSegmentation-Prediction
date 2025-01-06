@@ -1,6 +1,0 @@
-streamlit
-pandas
-numpy
-pickle
-scikit-learn
-matplotlib==3.10.0
